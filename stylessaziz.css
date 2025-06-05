@@ -51,8 +51,8 @@
   margin-bottom: 1rem;
   font-size: 2.5rem;
   font-weight: 700;
-  font-family: var(--header-font);
-  color: var(--text-dark);
+  font-family: var(--header-font); /* "Lora", serif */
+  color: var(--text-dark); /* #222222 */
 }
 
 .section__subheader {
@@ -62,15 +62,15 @@
 .btn {
   padding: 0.75rem 2rem;
   font-size: 1rem;
-  color: var(--text-primary);
-  background-color: var(--gold-main);
+  color: var(--text-primary); /* #ffffff */
+  background-color: var(--gold-main); /* Vous devez vérifier la définition de --gold-main dans vos variables CSS */
   border-radius: 5rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .btn:hover {
-  background-color: var(--hover-gold);
+  background-color: var(--hover-gold); /* Vous devez vérifier la définition de --hover-gold */
 }
 
 img {
@@ -956,4 +956,136 @@ nav {
         transform: scale(1.2);
       }
     }
+.choose__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
 
+.choose__image img {
+  max-width: 100%;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.choose__image img:hover {
+  transform: scale(1.05);
+}
+
+/* Style du X entre les logos */
+.choose__separator {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--red-main);
+  margin: 0;
+  font-family: var(--header-font);
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .choose__image {
+    gap: 1rem;
+  }
+
+  .choose__image img {
+    width: 130px;
+  }
+
+  .choose__separator {
+    font-size: 2rem;
+  }
+}
+
+/* Style global pour la section des offres spéciales */
+#special-offer {
+  color: var(--text-dark);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.section__header {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  font-family: var(--header-font);
+  font-weight: bold;
+}
+
+.section__subheader {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+/* Cartes d'offres */
+.offer-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 91, 170, 0.3);
+}
+
+/* Icône d'offre */
+.offer-icon {
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+
+/* Texte de réduction */
+.discount-text {
+  color: var(--red-main);
+  font-weight: bold;
+}
+
+/* Description de l'offre */
+.offer-description {
+  font-size: 1rem;
+  color: var(--text-dark);
+  margin-top: 0.5rem;
+}
+
+/* Prix */
+.price-tag {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.old-price {
+  color: var(--gray-medium);
+  text-decoration: line-through;
+}
+
+.new-price {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section__header {
+    font-size: 2rem;
+  }
+
+  .offer-icon {
+    font-size: 1.8rem;
+  }
+
+  .price-tag {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+  }
+
+  .offer-card {
+    padding: 1.5rem;
+  }
+}
